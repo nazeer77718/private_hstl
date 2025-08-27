@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,6 +31,12 @@ public class StylishHostelGUI extends JFrame {
         menuPanel.setBackground(new Color(236, 240, 241));
 
         JButton addBtn = createStyledButton("➕ Add Student", new Color(46, 204, 113));
+        addBtn.addActionListener(e -> {
+    SwingUtilities.invokeLater(() -> {
+        new AddStudentForm().setVisible(true);
+    });
+});
+
         JButton viewBtn = createStyledButton("📋 View Students", new Color(52, 152, 219));
         JButton searchBtn = createStyledButton("🔍 Search Student", new Color(241, 196, 15));
         JButton feeBtn = createStyledButton("💰 Manage Fees", new Color(231, 76, 60));
